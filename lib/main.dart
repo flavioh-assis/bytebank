@@ -1,24 +1,33 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(
-    Column(
-      children: const <Widget>[
-        Text(
-          'Deliver features faster',
-          textDirection: TextDirection.ltr,
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Transferências'),
         ),
-        Text(
-          'Craft beautiful UIs',
-          textDirection: TextDirection.ltr,
+        body: Column(
+          children: [
+            Card(
+              child: ListTile(
+                leading: Icon(Icons.monetization_on),
+                title: Text('100,00'),
+                subtitle: Text('1000,00'),
+              ),
+            ),
+          ],
         ),
-        Expanded(
-          child: FittedBox(
-            fit: BoxFit.contain, // otherwise the logo will be tiny
-            child: FlutterLogo(),
-          ),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: () {},
         ),
-      ],
-    ),
-  );
+      ),
+    );
+  }
 }
