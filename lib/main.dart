@@ -20,7 +20,41 @@ class FormularioTransferencia extends StatelessWidget {
       appBar: AppBar(
         title: Text('Formulario de Transferencia'),
       ),
-      body: Text('FormularioTransferencia'),
+      body: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: TextField(
+              decoration: InputDecoration(
+                labelText: 'Número da conta',
+                hintText: '0000',
+              ),
+              style: TextStyle(
+                fontSize: 24.0,
+              ),
+              keyboardType: TextInputType.number,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: TextField(
+              decoration: InputDecoration(
+                icon: Icon(Icons.monetization_on),
+                labelText: 'Valor',
+                hintText: '000,00',
+              ),
+              style: TextStyle(
+                fontSize: 24.0,
+              ),
+              keyboardType: TextInputType.number,
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: Text('Confirmar'),
+          ),
+        ],
+      ),
     );
   }
 }
